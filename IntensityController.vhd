@@ -11,12 +11,13 @@ port (
 	
 	d		: out std_logic;
 	en		: out std_logic;
-	s		: out bit_vector (1 downto 0)
+	s		: out bit_vector (2 downto 0);
+	v		: out bit_vector (1 downto 0)
 );
 end IntensityController;
 
 architecture hardware of IntensityController is
-	type states is (OFF_STATE, LOW_STATE, WAIT_LOW_STATE, NORMAL_STATE, WAIT_NORMAL_STATE, HIGH_STATE, WAIT_HIGH_STATE);
+	type states is (OFF_STATE, WAIT_OFF_STATE, LOW_STATE, WAIT_LOW_STATE, NORMAL_STATE, WAIT_NORMAL_STATE, WAIT_HIGH_STATE, HIGH_STATE);
 	signal state : states;
 
 begin
@@ -31,6 +32,16 @@ begin
 				when OFF_STATE =>
 					if bi = '0' then
 						state <= OFF_STATE;
+						d <= '0';
+						en <= '0';
+					else
+						state <= WAIT_OFF_STATE;
+						d <= '1';
+						en <= '0';
+					end if;
+				when WAIT_OFF_STATE =>
+					if bi = '1' then
+						state <= WAIT_OFF_STATE;
 						d <= '0';
 						en <= '0';
 					else
@@ -79,14 +90,14 @@ begin
 						en <= '1';
 					end if;
 				when HIGH_STATE =>
-					if bi = '0' or (m = '1' and Q = '0') then
-						state <= HIGH_STATE;
-						d <= '1';
-						en <= '1';
-					elsif m = '1' and Q = '1' then
+					if m = '1' and Q = '1' then
 						state <= NORMAL_STATE;
 						d <= '1';
 						en <= '0';
+					elsif bi = '0' then
+						state <= HIGH_STATE;
+						d <= '1';
+						en <= '1';
 					else
 						state <= WAIT_HIGH_STATE;
 						d <= '1';
@@ -110,11 +121,21 @@ begin
 			end if;
 	end process;
 with state select
-	s <= 	"00" when OFF_STATE,
+	v <= 	"00" when OFF_STATE,
+			"00" when WAIT_OFF_STATE,
 			"01" when LOW_STATE,
 			"01" when WAIT_LOW_STATE,
 			"10" when NORMAL_STATE,
 			"10" when WAIT_NORMAL_STATE,
 			"11" when HIGH_STATE,
 			"11" when WAIT_HIGH_STATE;
+with state select
+	s <= 	"000" when OFF_STATE,
+			"001" when WAIT_OFF_STATE,
+			"010" when LOW_STATE,
+			"011" when WAIT_LOW_STATE,
+			"100" when NORMAL_STATE,
+			"101" when WAIT_NORMAL_STATE,
+			"110" when HIGH_STATE,
+			"111" when WAIT_HIGH_STATE;
 end architecture;

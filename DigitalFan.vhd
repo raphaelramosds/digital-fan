@@ -12,7 +12,8 @@ entity DigitalFan is
 		  x		: in unsigned(8 downto 0);			-- Tempo no modo economia
 		  q		: out std_logic;						-- Estouro do temporizador
 		  mode 	: out std_logic;						-- Modo atual do ventilador
-        s		: out bit_vector (1 downto 0) 	--	Velocidade atual do ventilador
+        s		: out bit_vector (2 downto 0); 	--	Estado da FSM
+		  v		: out bit_vector (1 downto 0)		-- Velocidade atual do ventilador
     );
 end DigitalFan;
 
@@ -35,7 +36,8 @@ architecture Behavioral of DigitalFan is
             bi  : in  std_logic;
             rst : in  std_logic;
             Q   : in std_logic;
-            s	 : out bit_vector (1 downto 0);
+            s	 : out bit_vector (2 downto 0);
+				v	 : out bit_vector (1 downto 0);
             en  : out std_logic
         );
     end component;
@@ -52,6 +54,7 @@ architecture Behavioral of DigitalFan is
 
     -- Conexões
     signal m_out : std_logic;							-- Avisa ao IntensityController qual o modo atual 
+	 signal v_out : bit_vector (1 downto 0); 		-- Retorna a velocidade atual
     signal timer_en : std_logic;						-- IntensityController habilita/desabilita contagem
 	 signal q_controller : std_logic;				-- Temporizador avisa ao IntensityController o termino da contagem
 
@@ -72,6 +75,7 @@ begin
             rst 	=> rst,
             Q   	=> q_controller,
             s 		=> s,
+				v		=> v,
             en  	=> timer_en
         );
 

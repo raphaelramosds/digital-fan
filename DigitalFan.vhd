@@ -9,7 +9,6 @@ entity DigitalFan is
         bm  	: in  std_logic;    					-- Alternar entre modos de economia de energia e padrao
         bi  	: in  std_logic;    					-- Alternar entre as velocidades do ventilador
         rst 	: in  std_logic;    					-- Desliga o ventilador
-		  x		: in unsigned(8 downto 0);			-- Tempo no modo economia
 		  q		: out std_logic;						-- Estouro do temporizador
 		  mode 	: out std_logic;						-- Modo atual do ventilador
 		  v		: out bit_vector (1 downto 0)		-- Velocidade atual do ventilador
@@ -79,7 +78,7 @@ begin
     TimerLoad : TimerLoadable
         port map (
             clk => clk,
-            X   => x,
+            X   => "000000110",
             en  => timer_en,
             Q   => q_controller
         );

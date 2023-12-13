@@ -4,11 +4,11 @@ K3
 cModel Technology
 Z0 dC:\Users\rapha\Documents\Projeto VHDL\digital-fan\simulation\qsim
 vDigitalFan
-Z1 !s100 Rja6oZgj3b6mZnYI8Mgi>2
-Z2 IKm`nCe?FCcK?GD3XFCDI21
-Z3 VOQlGL]C?8571dU9lMhD983
+Z1 !s100 ^[MmXUDCJdJE@TbM=gBAX3
+Z2 I;0[k1gb?GmRBQdDVe6LWA3
+Z3 VLOKcXW`oFcDZ9c87_L2N:0
 Z4 dC:\Users\rapha\Documents\Projeto VHDL\digital-fan\simulation\qsim
-Z5 w1702489512
+Z5 w1702491752
 Z6 8DigitalFan.vo
 Z7 FDigitalFan.vo
 L0 31
@@ -20,66 +20,66 @@ Z10 o-work work -O0
 Z11 n@digital@fan
 !i10b 1
 !s85 0
-Z12 !s108 1702489513.360000
+Z12 !s108 1702491752.638000
 Z13 !s107 DigitalFan.vo|
 !s101 -O0
 vDigitalFan_vlg_check_tst
 !i10b 1
-Z14 !s100 0IQjKF71h_b4KCz@Kdn?91
-Z15 I9cUYM>`zcYPFNX7Q9^U:O0
+Z14 !s100 S1m@n>;K`m^dagQR0?2nc1
+Z15 I[<T8fZYi1oB2bNNQnGW<W0
 Z16 VLXGcMcBOX7iE67H7i>O<h1
 R4
-R5
-Z17 8DigitalFan.vt
-Z18 FDigitalFan.vt
-L0 65
+Z17 w1702491751
+Z18 8DigitalFan.vt
+Z19 FDigitalFan.vt
+L0 63
 R8
 r1
 !s85 0
 31
-Z19 !s108 1702489513.464000
-Z20 !s107 DigitalFan.vt|
-Z21 !s90 -work|work|DigitalFan.vt|
+Z20 !s108 1702491752.708000
+Z21 !s107 DigitalFan.vt|
+Z22 !s90 -work|work|DigitalFan.vt|
 !s101 -O0
 R10
-Z22 n@digital@fan_vlg_check_tst
+Z23 n@digital@fan_vlg_check_tst
 vDigitalFan_vlg_sample_tst
 !i10b 1
-Z23 !s100 VCB`1<SAhVg3H<ZYGW]iC3
-Z24 I2GIlbUMI3_<]X;`Xj7WkD0
-Z25 VSLS<?I9oV5;7UZiNYH`7l0
+Z24 !s100 >kT_;2cf2G;0?MV=L`EUU3
+Z25 IA?:J?bVAVeX@EE4DFKdba3
+Z26 V2lSlJBIWdS]9U<M6H5Kg<3
 R4
-R5
 R17
 R18
+R19
 L0 29
 R8
 r1
 !s85 0
 31
-R19
 R20
 R21
+R22
 !s101 -O0
 R10
-Z26 n@digital@fan_vlg_sample_tst
+Z27 n@digital@fan_vlg_sample_tst
 vDigitalFan_vlg_vec_tst
 !i10b 1
-!s100 6?M[Hjz@U@JMC;8^leoAB3
-IAK^95^6T1GlM^i1j[36li3
-Z27 V[6o65P^B2eS?6kKf7F9Sh1
+!s100 czm`lSZQ:;L<=ZdJC8T@m0
+I=eO1hXiVi_Fn7ogP2`8^:2
+Z28 V[6o65P^B2eS?6kKf7F9Sh1
 R4
-R5
 R17
 R18
-Z28 L0 231
+R19
+Z29 L0 229
 R8
 r1
 !s85 0
 31
-R19
 R20
 R21
+R22
 !s101 -O0
 R10
-Z29 n@digital@fan_vlg_vec_tst
+Z30 n@digital@fan_vlg_vec_tst

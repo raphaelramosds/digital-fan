@@ -6,7 +6,6 @@ entity DigitalFan is
         bm              : in     vl_logic;
         bi              : in     vl_logic;
         rst             : in     vl_logic;
-        x               : in     vl_logic_vector(8 downto 0);
         q               : out    vl_logic;
         mode            : out    vl_logic;
         v               : out    vl_logic_vector(1 downto 0)

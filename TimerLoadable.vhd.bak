@@ -5,10 +5,10 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity TimerLoadable is
     Port (
-        clk	: in std_logic;				-- Clock (Recomendado: 1 us)
-        en 	: in std_logic;				-- Habilitar/desabilitar timer
-        X   : in unsigned(8 downto 0); -- Valor a se contar (fixo)
-        Q 	: out std_logic				-- Tempo limite
+        clk	: in std_logic;					-- Clock (Recomendado: 1 us)
+        en 	: in std_logic;					-- Habilitar/desabilitar timer
+        X 	: in unsigned(8 downto 0);		-- Valor a se contar
+        Q 	: out std_logic					-- Tempo limite
     );
 end TimerLoadable;
 

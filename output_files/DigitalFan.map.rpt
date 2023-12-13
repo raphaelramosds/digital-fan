@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DigitalFan
-Wed Dec 13 14:38:43 2023
+Wed Dec 13 15:18:17 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -17,9 +17,10 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   9. State Machine - |DigitalFan|ModeController:ModeCtrl|state
  10. Registers Removed During Synthesis
  11. General Register Statistics
- 12. Port Connectivity Checks: "IntensityController:IntensityCtrl"
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 12. Port Connectivity Checks: "TimerLoadable:TimerLoad"
+ 13. Port Connectivity Checks: "IntensityController:IntensityCtrl"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -45,16 +46,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Dec 13 14:38:43 2023           ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 13 15:18:17 2023           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DigitalFan                                      ;
 ; Top-level Entity Name              ; DigitalFan                                      ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 33                                              ;
-;     Total combinational functions  ; 33                                              ;
+; Total logic elements               ; 32                                              ;
+;     Total combinational functions  ; 32                                              ;
 ;     Dedicated logic registers      ; 23                                              ;
 ; Total registers                    ; 23                                              ;
-; Total pins                         ; 17                                              ;
+; Total pins                         ; 8                                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -175,28 +176,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 33    ;
+; Estimated Total logic elements              ; 32    ;
 ;                                             ;       ;
-; Total combinational functions               ; 33    ;
+; Total combinational functions               ; 32    ;
 ; Logic element usage by number of LUT inputs ;       ;
 ;     -- 4 input functions                    ; 10    ;
-;     -- 3 input functions                    ; 14    ;
+;     -- 3 input functions                    ; 13    ;
 ;     -- <=2 input functions                  ; 9     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 25    ;
+;     -- normal mode                          ; 24    ;
 ;     -- arithmetic mode                      ; 8     ;
 ;                                             ;       ;
 ; Total registers                             ; 23    ;
 ;     -- Dedicated logic registers            ; 23    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 17    ;
+; I/O pins                                    ; 8     ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
 ; Maximum fan-out                             ; 23    ;
-; Total fan-out                               ; 175   ;
-; Average fan-out                             ; 2.40  ;
+; Total fan-out                               ; 163   ;
+; Average fan-out                             ; 2.59  ;
 +---------------------------------------------+-------+
 
 
@@ -205,10 +206,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
 ; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Library Name ;
 +----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
-; |DigitalFan                            ; 33 (0)            ; 23 (0)       ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |DigitalFan                                   ; work         ;
+; |DigitalFan                            ; 32 (0)            ; 23 (0)       ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |DigitalFan                                   ; work         ;
 ;    |IntensityController:IntensityCtrl| ; 12 (12)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalFan|IntensityController:IntensityCtrl ; work         ;
 ;    |ModeController:ModeCtrl|           ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalFan|ModeController:ModeCtrl           ; work         ;
-;    |TimerLoadable:TimerLoad|           ; 16 (16)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalFan|TimerLoadable:TimerLoad           ; work         ;
+;    |TimerLoadable:TimerLoad|           ; 15 (15)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DigitalFan|TimerLoadable:TimerLoad           ; work         ;
 +----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -259,13 +260,24 @@ Encoding Type:  One-Hot
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 23    ;
-; Number of registers using Synchronous Clear  ; 9     ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 8     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 9     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "TimerLoadable:TimerLoad" ;
++---------+-------+----------+------------------------+
+; Port    ; Type  ; Severity ; Details                ;
++---------+-------+----------+------------------------+
+; x[2..1] ; Input ; Info     ; Stuck at VCC           ;
+; x[8..3] ; Input ; Info     ; Stuck at GND           ;
+; x[0]    ; Input ; Info     ; Stuck at GND           ;
++---------+-------+----------+------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
@@ -292,7 +304,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Dec 13 14:38:39 2023
+    Info: Processing started: Wed Dec 13 15:18:16 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DigitalFan -c DigitalFan
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file digitalfan.vhd
@@ -314,14 +326,14 @@ Info (12128): Elaborating entity "TimerLoadable" for hierarchy "TimerLoadable:Ti
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 50 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 13 input pins
+Info (21057): Implemented 40 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
     Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 33 logic cells
+    Info (21061): Implemented 32 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4643 megabytes
-    Info: Processing ended: Wed Dec 13 14:38:43 2023
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 4645 megabytes
+    Info: Processing ended: Wed Dec 13 15:18:17 2023
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

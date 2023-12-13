@@ -1,0 +1,18 @@
+
+State Machine - |DigitalFan|IntensityController:IntensityCtrl|state
+Name state.HIGH_STATE state.WAIT_HIGH_STATE state.WAIT_NORMAL_STATE state.NORMAL_STATE state.WAIT_LOW_STATE state.LOW_STATE state.WAIT_OFF_STATE state.OFF_STATE 
+state.OFF_STATE 0 0 0 0 0 0 0 0 
+state.WAIT_OFF_STATE 0 0 0 0 0 0 1 1 
+state.LOW_STATE 0 0 0 0 0 1 0 1 
+state.WAIT_LOW_STATE 0 0 0 0 1 0 0 1 
+state.NORMAL_STATE 0 0 0 1 0 0 0 1 
+state.WAIT_NORMAL_STATE 0 0 1 0 0 0 0 1 
+state.WAIT_HIGH_STATE 0 1 0 0 0 0 0 1 
+state.HIGH_STATE 1 0 0 0 0 0 0 1 
+
+State Machine - |DigitalFan|ModeController:ModeCtrl|state
+Name state.WAIT_SAVE state.SAVE state.WAIT_DEFAULT state.DEFAULT 
+state.DEFAULT 0 0 0 0 
+state.WAIT_DEFAULT 0 0 1 1 
+state.SAVE 0 1 0 1 
+state.WAIT_SAVE 1 0 0 1 

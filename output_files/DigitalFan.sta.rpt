@@ -1,0 +1,1153 @@
+TimeQuest Timing Analyzer report for DigitalFan
+Wed Dec 13 14:38:57 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; DigitalFan                                                        ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 374.39 MHz ; 374.39 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.671 ; -18.842       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -24.380               ;
++-------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                       ;
++--------+--------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.671 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.707      ;
+; -1.671 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.707      ;
+; -1.671 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.707      ;
+; -1.671 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.707      ;
+; -1.671 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.707      ;
+; -1.671 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.707      ;
+; -1.671 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.707      ;
+; -1.671 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.707      ;
+; -1.671 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.707      ;
+; -1.639 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.675      ;
+; -1.639 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.675      ;
+; -1.639 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.675      ;
+; -1.639 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.675      ;
+; -1.639 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.675      ;
+; -1.639 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.675      ;
+; -1.639 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.675      ;
+; -1.639 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.675      ;
+; -1.639 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.675      ;
+; -1.606 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.642      ;
+; -1.606 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.642      ;
+; -1.606 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.642      ;
+; -1.606 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.642      ;
+; -1.606 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.642      ;
+; -1.606 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.642      ;
+; -1.606 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.642      ;
+; -1.606 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.642      ;
+; -1.606 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.642      ;
+; -1.538 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.538 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.538 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.538 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.538 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.538 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.538 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.538 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.538 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.506 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.542      ;
+; -1.506 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.542      ;
+; -1.506 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.542      ;
+; -1.506 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.542      ;
+; -1.506 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.542      ;
+; -1.506 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.542      ;
+; -1.506 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.542      ;
+; -1.506 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.542      ;
+; -1.506 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.542      ;
+; -1.473 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.509      ;
+; -1.473 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.509      ;
+; -1.473 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.509      ;
+; -1.473 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.509      ;
+; -1.473 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.509      ;
+; -1.473 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.509      ;
+; -1.473 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.509      ;
+; -1.473 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.509      ;
+; -1.473 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.509      ;
+; -1.360 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.396      ;
+; -1.360 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.396      ;
+; -1.360 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.396      ;
+; -1.360 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.396      ;
+; -1.360 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.396      ;
+; -1.360 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.396      ;
+; -1.360 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.396      ;
+; -1.360 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.396      ;
+; -1.360 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.396      ;
+; -1.323 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 2.359      ;
+; -1.291 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 2.327      ;
+; -1.258 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 2.294      ;
+; -1.227 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.263      ;
+; -1.227 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.263      ;
+; -1.227 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.263      ;
+; -1.227 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.263      ;
+; -1.227 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.263      ;
+; -1.227 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.263      ;
+; -1.227 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.263      ;
+; -1.227 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.263      ;
+; -1.227 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.263      ;
+; -1.190 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 2.226      ;
+; -1.158 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 2.194      ;
+; -1.125 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 2.161      ;
+; -1.012 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 2.048      ;
+; -0.924 ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.960      ;
+; -0.924 ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.960      ;
+; -0.924 ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.960      ;
+; -0.924 ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.960      ;
+; -0.924 ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.960      ;
+; -0.924 ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.960      ;
+; -0.924 ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.960      ;
+; -0.924 ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.960      ;
+; -0.924 ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.960      ;
+; -0.879 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.915      ;
+; -0.620 ; ModeController:ModeCtrl|m            ; IntensityController:IntensityCtrl|en                    ; clk          ; clk         ; 1.000        ; 0.001      ; 1.657      ;
+; -0.619 ; ModeController:ModeCtrl|m            ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE ; clk          ; clk         ; 1.000        ; 0.001      ; 1.656      ;
+; -0.600 ; ModeController:ModeCtrl|m            ; IntensityController:IntensityCtrl|state.NORMAL_STATE    ; clk          ; clk         ; 1.000        ; 0.001      ; 1.637      ;
+; -0.513 ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.549      ;
+; -0.513 ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.549      ;
+; -0.513 ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.549      ;
+; -0.513 ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.549      ;
+; -0.513 ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.549      ;
+; -0.513 ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.549      ;
+; -0.513 ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.549      ;
+; -0.513 ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.549      ;
++--------+--------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                              ;
++-------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                 ; To Node                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; IntensityController:IntensityCtrl|state.OFF_STATE         ; IntensityController:IntensityCtrl|state.OFF_STATE         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; IntensityController:IntensityCtrl|state.WAIT_OFF_STATE    ; IntensityController:IntensityCtrl|state.WAIT_OFF_STATE    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; IntensityController:IntensityCtrl|state.LOW_STATE         ; IntensityController:IntensityCtrl|state.LOW_STATE         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; IntensityController:IntensityCtrl|state.WAIT_LOW_STATE    ; IntensityController:IntensityCtrl|state.WAIT_LOW_STATE    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; IntensityController:IntensityCtrl|state.WAIT_NORMAL_STATE ; IntensityController:IntensityCtrl|state.WAIT_NORMAL_STATE ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.623 ; ModeController:ModeCtrl|state.SAVE                        ; ModeController:ModeCtrl|state.DEFAULT                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.889      ;
+; 0.628 ; ModeController:ModeCtrl|state.SAVE                        ; ModeController:ModeCtrl|m                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.894      ;
+; 0.703 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|Q                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.969      ;
+; 0.755 ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ; ModeController:ModeCtrl|state.WAIT_SAVE                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.021      ;
+; 0.758 ; ModeController:ModeCtrl|state.WAIT_SAVE                   ; ModeController:ModeCtrl|state.SAVE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.024      ;
+; 0.774 ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; IntensityController:IntensityCtrl|state.WAIT_NORMAL_STATE ; clk          ; clk         ; 0.000        ; 0.000      ; 1.040      ;
+; 0.801 ; TimerLoadable:TimerLoad|counter[7]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.067      ;
+; 0.802 ; ModeController:ModeCtrl|state.WAIT_SAVE                   ; ModeController:ModeCtrl|m                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.068      ;
+; 0.803 ; IntensityController:IntensityCtrl|state.WAIT_NORMAL_STATE ; IntensityController:IntensityCtrl|en                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.069      ;
+; 0.805 ; IntensityController:IntensityCtrl|state.WAIT_LOW_STATE    ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.071      ;
+; 0.807 ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ; ModeController:ModeCtrl|state.DEFAULT                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.073      ;
+; 0.809 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[0]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.075      ;
+; 0.809 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[2]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.075      ;
+; 0.814 ; IntensityController:IntensityCtrl|state.WAIT_OFF_STATE    ; IntensityController:IntensityCtrl|state.LOW_STATE         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.080      ;
+; 0.815 ; ModeController:ModeCtrl|state.DEFAULT                     ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.081      ;
+; 0.815 ; ModeController:ModeCtrl|state.DEFAULT                     ; ModeController:ModeCtrl|state.WAIT_SAVE                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.081      ;
+; 0.818 ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ; IntensityController:IntensityCtrl|state.OFF_STATE         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.084      ;
+; 0.821 ; IntensityController:IntensityCtrl|state.OFF_STATE         ; IntensityController:IntensityCtrl|state.WAIT_OFF_STATE    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.087      ;
+; 0.821 ; IntensityController:IntensityCtrl|state.LOW_STATE         ; IntensityController:IntensityCtrl|state.WAIT_LOW_STATE    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.087      ;
+; 0.833 ; TimerLoadable:TimerLoad|counter[6]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.099      ;
+; 0.838 ; ModeController:ModeCtrl|state.DEFAULT                     ; ModeController:ModeCtrl|state.SAVE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.104      ;
+; 0.841 ; TimerLoadable:TimerLoad|counter[3]                        ; TimerLoadable:TimerLoad|counter[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.107      ;
+; 0.841 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[1]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.107      ;
+; 0.855 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|Q                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.121      ;
+; 0.935 ; TimerLoadable:TimerLoad|Q                                 ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.201      ;
+; 0.936 ; TimerLoadable:TimerLoad|Q                                 ; IntensityController:IntensityCtrl|en                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.202      ;
+; 0.943 ; TimerLoadable:TimerLoad|Q                                 ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.209      ;
+; 0.978 ; TimerLoadable:TimerLoad|counter[5]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.244      ;
+; 0.985 ; TimerLoadable:TimerLoad|counter[4]                        ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.251      ;
+; 1.018 ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ; ModeController:ModeCtrl|m                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.284      ;
+; 1.184 ; TimerLoadable:TimerLoad|counter[7]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.450      ;
+; 1.192 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.458      ;
+; 1.192 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[1]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.458      ;
+; 1.210 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.476      ;
+; 1.219 ; TimerLoadable:TimerLoad|counter[6]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.485      ;
+; 1.227 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[2]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.493      ;
+; 1.227 ; TimerLoadable:TimerLoad|counter[3]                        ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.493      ;
+; 1.230 ; IntensityController:IntensityCtrl|en                      ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.248 ; IntensityController:IntensityCtrl|en                      ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.514      ;
+; 1.249 ; IntensityController:IntensityCtrl|en                      ; IntensityController:IntensityCtrl|en                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.515      ;
+; 1.263 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[2]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.529      ;
+; 1.263 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.529      ;
+; 1.283 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[0]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.549      ;
+; 1.283 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[2]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.549      ;
+; 1.283 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.549      ;
+; 1.283 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.549      ;
+; 1.283 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.549      ;
+; 1.283 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.549      ;
+; 1.283 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.549      ;
+; 1.283 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.549      ;
+; 1.283 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[1]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.549      ;
+; 1.290 ; TimerLoadable:TimerLoad|counter[6]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.556      ;
+; 1.298 ; TimerLoadable:TimerLoad|counter[3]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.564      ;
+; 1.298 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.564      ;
+; 1.334 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.600      ;
+; 1.334 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.600      ;
+; 1.368 ; TimerLoadable:TimerLoad|counter[4]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.634      ;
+; 1.369 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.635      ;
+; 1.370 ; ModeController:ModeCtrl|m                                 ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; clk          ; clk         ; 0.000        ; 0.001      ; 1.637      ;
+; 1.389 ; ModeController:ModeCtrl|m                                 ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ; clk          ; clk         ; 0.000        ; 0.001      ; 1.656      ;
+; 1.390 ; ModeController:ModeCtrl|m                                 ; IntensityController:IntensityCtrl|en                      ; clk          ; clk         ; 0.000        ; 0.001      ; 1.657      ;
+; 1.405 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.671      ;
+; 1.440 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.706      ;
+; 1.454 ; TimerLoadable:TimerLoad|counter[5]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.720      ;
+; 1.457 ; TimerLoadable:TimerLoad|counter[3]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.723      ;
+; 1.476 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.742      ;
+; 1.493 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.759      ;
+; 1.525 ; TimerLoadable:TimerLoad|counter[5]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.791      ;
+; 1.527 ; TimerLoadable:TimerLoad|counter[4]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.793      ;
+; 1.528 ; TimerLoadable:TimerLoad|counter[3]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.794      ;
+; 1.564 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.830      ;
+; 1.596 ; TimerLoadable:TimerLoad|counter[5]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.862      ;
+; 1.598 ; TimerLoadable:TimerLoad|counter[4]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.864      ;
+; 1.599 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.865      ;
+; 1.599 ; TimerLoadable:TimerLoad|counter[3]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.865      ;
+; 1.635 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.901      ;
+; 1.635 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.901      ;
+; 1.649 ; TimerLoadable:TimerLoad|counter[4]                        ; TimerLoadable:TimerLoad|Q                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.915      ;
+; 1.669 ; TimerLoadable:TimerLoad|counter[4]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.935      ;
+; 1.670 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.936      ;
+; 1.694 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[0]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.960      ;
+; 1.694 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[2]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.960      ;
+; 1.694 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.960      ;
+; 1.694 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.960      ;
+; 1.694 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.960      ;
+; 1.694 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.960      ;
+; 1.694 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.960      ;
+; 1.694 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[1]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.960      ;
+; 1.706 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.972      ;
+; 1.741 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.007      ;
+; 1.777 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.043      ;
+; 1.782 ; TimerLoadable:TimerLoad|counter[5]                        ; TimerLoadable:TimerLoad|Q                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.048      ;
++-------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|en                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|en                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.LOW_STATE         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.LOW_STATE         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.OFF_STATE         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.OFF_STATE         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_LOW_STATE    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_LOW_STATE    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_NORMAL_STATE ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_NORMAL_STATE ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_OFF_STATE    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_OFF_STATE    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ModeController:ModeCtrl|m                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeController:ModeCtrl|m                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ModeController:ModeCtrl|state.DEFAULT                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeController:ModeCtrl|state.DEFAULT                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ModeController:ModeCtrl|state.SAVE                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeController:ModeCtrl|state.SAVE                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ModeController:ModeCtrl|state.WAIT_SAVE                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeController:ModeCtrl|state.WAIT_SAVE                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|Q                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|Q                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[4]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[4]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[5]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[5]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[6]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[6]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[8]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[8]                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|en|clk                                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|en|clk                                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.LOW_STATE|clk                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.LOW_STATE|clk                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.NORMAL_STATE|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.NORMAL_STATE|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.OFF_STATE|clk                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.OFF_STATE|clk                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.WAIT_HIGH_STATE|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.WAIT_HIGH_STATE|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.WAIT_LOW_STATE|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.WAIT_LOW_STATE|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.WAIT_NORMAL_STATE|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.WAIT_NORMAL_STATE|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.WAIT_OFF_STATE|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.WAIT_OFF_STATE|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; ModeCtrl|m|clk                                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeCtrl|m|clk                                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; ModeCtrl|state.DEFAULT|clk                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeCtrl|state.DEFAULT|clk                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; ModeCtrl|state.SAVE|clk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeCtrl|state.SAVE|clk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; ModeCtrl|state.WAIT_DEFAULT|clk                           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeCtrl|state.WAIT_DEFAULT|clk                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; ModeCtrl|state.WAIT_SAVE|clk                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeCtrl|state.WAIT_SAVE|clk                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|Q|clk                                           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|Q|clk                                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[0]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[0]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[1]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[1]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[2]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[2]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[3]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[3]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[4]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[4]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[5]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[5]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[6]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[6]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[7]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[7]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[8]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[8]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]                                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]                                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk                                        ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; bi        ; clk        ; 4.234 ; 4.234 ; Rise       ; clk             ;
+; bm        ; clk        ; 4.212 ; 4.212 ; Rise       ; clk             ;
+; x[*]      ; clk        ; 6.838 ; 6.838 ; Rise       ; clk             ;
+;  x[0]     ; clk        ; 5.081 ; 5.081 ; Rise       ; clk             ;
+;  x[1]     ; clk        ; 6.838 ; 6.838 ; Rise       ; clk             ;
+;  x[2]     ; clk        ; 4.818 ; 4.818 ; Rise       ; clk             ;
+;  x[3]     ; clk        ; 5.323 ; 5.323 ; Rise       ; clk             ;
+;  x[4]     ; clk        ; 4.592 ; 4.592 ; Rise       ; clk             ;
+;  x[5]     ; clk        ; 4.862 ; 4.862 ; Rise       ; clk             ;
+;  x[6]     ; clk        ; 5.152 ; 5.152 ; Rise       ; clk             ;
+;  x[7]     ; clk        ; 5.154 ; 5.154 ; Rise       ; clk             ;
+;  x[8]     ; clk        ; 3.956 ; 3.956 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; bi        ; clk        ; -3.698 ; -3.698 ; Rise       ; clk             ;
+; bm        ; clk        ; -3.975 ; -3.975 ; Rise       ; clk             ;
+; x[*]      ; clk        ; -3.070 ; -3.070 ; Rise       ; clk             ;
+;  x[0]     ; clk        ; -4.503 ; -4.503 ; Rise       ; clk             ;
+;  x[1]     ; clk        ; -6.260 ; -6.260 ; Rise       ; clk             ;
+;  x[2]     ; clk        ; -4.240 ; -4.240 ; Rise       ; clk             ;
+;  x[3]     ; clk        ; -4.745 ; -4.745 ; Rise       ; clk             ;
+;  x[4]     ; clk        ; -4.014 ; -4.014 ; Rise       ; clk             ;
+;  x[5]     ; clk        ; -4.284 ; -4.284 ; Rise       ; clk             ;
+;  x[6]     ; clk        ; -4.574 ; -4.574 ; Rise       ; clk             ;
+;  x[7]     ; clk        ; -4.576 ; -4.576 ; Rise       ; clk             ;
+;  x[8]     ; clk        ; -3.070 ; -3.070 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; mode      ; clk        ; 6.643 ; 6.643 ; Rise       ; clk             ;
+; q         ; clk        ; 7.618 ; 7.618 ; Rise       ; clk             ;
+; v[*]      ; clk        ; 7.409 ; 7.409 ; Rise       ; clk             ;
+;  v[0]     ; clk        ; 7.409 ; 7.409 ; Rise       ; clk             ;
+;  v[1]     ; clk        ; 7.383 ; 7.383 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; mode      ; clk        ; 6.643 ; 6.643 ; Rise       ; clk             ;
+; q         ; clk        ; 7.618 ; 7.618 ; Rise       ; clk             ;
+; v[*]      ; clk        ; 7.082 ; 7.082 ; Rise       ; clk             ;
+;  v[0]     ; clk        ; 7.091 ; 7.091 ; Rise       ; clk             ;
+;  v[1]     ; clk        ; 7.082 ; 7.082 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.259 ; -2.394        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -24.380               ;
++-------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                       ;
++--------+--------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.259 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.259 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.259 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.259 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.259 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.259 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.259 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.259 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.259 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.239 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.271      ;
+; -0.239 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.271      ;
+; -0.239 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.271      ;
+; -0.239 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.271      ;
+; -0.239 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.271      ;
+; -0.239 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.271      ;
+; -0.239 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.271      ;
+; -0.239 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.271      ;
+; -0.239 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.271      ;
+; -0.224 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.256      ;
+; -0.224 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.256      ;
+; -0.224 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.256      ;
+; -0.224 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.256      ;
+; -0.224 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.256      ;
+; -0.224 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.256      ;
+; -0.224 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.256      ;
+; -0.224 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.256      ;
+; -0.224 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.256      ;
+; -0.207 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.239      ;
+; -0.207 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.239      ;
+; -0.207 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.239      ;
+; -0.207 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.239      ;
+; -0.207 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.239      ;
+; -0.207 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.239      ;
+; -0.207 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.239      ;
+; -0.207 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.239      ;
+; -0.207 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.239      ;
+; -0.188 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.220      ;
+; -0.188 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.220      ;
+; -0.188 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.220      ;
+; -0.188 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.220      ;
+; -0.188 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.220      ;
+; -0.188 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.220      ;
+; -0.188 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.220      ;
+; -0.188 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.220      ;
+; -0.188 ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.220      ;
+; -0.174 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.206      ;
+; -0.174 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.206      ;
+; -0.174 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.206      ;
+; -0.174 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.206      ;
+; -0.174 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.206      ;
+; -0.174 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.206      ;
+; -0.174 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.206      ;
+; -0.174 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.206      ;
+; -0.174 ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.206      ;
+; -0.100 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.100 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.100 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.100 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.100 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.100 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.100 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.100 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.100 ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.063 ; TimerLoadable:TimerLoad|counter[6]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.095      ;
+; -0.050 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 1.082      ;
+; -0.043 ; TimerLoadable:TimerLoad|counter[0]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.075      ;
+; -0.028 ; TimerLoadable:TimerLoad|counter[2]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.060      ;
+; -0.011 ; TimerLoadable:TimerLoad|counter[7]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.043      ;
+; 0.008  ; TimerLoadable:TimerLoad|counter[1]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.024      ;
+; 0.022  ; TimerLoadable:TimerLoad|counter[3]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.010      ;
+; 0.074  ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.958      ;
+; 0.074  ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.958      ;
+; 0.074  ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.958      ;
+; 0.074  ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.958      ;
+; 0.074  ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.958      ;
+; 0.074  ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.958      ;
+; 0.074  ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.958      ;
+; 0.074  ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.958      ;
+; 0.074  ; TimerLoadable:TimerLoad|counter[8]   ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.958      ;
+; 0.096  ; TimerLoadable:TimerLoad|counter[5]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 0.936      ;
+; 0.146  ; TimerLoadable:TimerLoad|counter[4]   ; TimerLoadable:TimerLoad|Q                               ; clk          ; clk         ; 1.000        ; 0.000      ; 0.886      ;
+; 0.213  ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[0]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.819      ;
+; 0.213  ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[2]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.819      ;
+; 0.213  ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[3]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.819      ;
+; 0.213  ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[4]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.819      ;
+; 0.213  ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[5]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.819      ;
+; 0.213  ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[6]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.819      ;
+; 0.213  ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[7]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.819      ;
+; 0.213  ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[8]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.819      ;
+; 0.213  ; IntensityController:IntensityCtrl|en ; TimerLoadable:TimerLoad|counter[1]                      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.819      ;
+; 0.260  ; ModeController:ModeCtrl|m            ; IntensityController:IntensityCtrl|state.NORMAL_STATE    ; clk          ; clk         ; 1.000        ; 0.000      ; 0.772      ;
+; 0.267  ; ModeController:ModeCtrl|m            ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE ; clk          ; clk         ; 1.000        ; 0.000      ; 0.765      ;
++--------+--------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                              ;
++-------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                 ; To Node                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; IntensityController:IntensityCtrl|state.OFF_STATE         ; IntensityController:IntensityCtrl|state.OFF_STATE         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; IntensityController:IntensityCtrl|state.WAIT_OFF_STATE    ; IntensityController:IntensityCtrl|state.WAIT_OFF_STATE    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; IntensityController:IntensityCtrl|state.LOW_STATE         ; IntensityController:IntensityCtrl|state.LOW_STATE         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; IntensityController:IntensityCtrl|state.WAIT_LOW_STATE    ; IntensityController:IntensityCtrl|state.WAIT_LOW_STATE    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; IntensityController:IntensityCtrl|state.WAIT_NORMAL_STATE ; IntensityController:IntensityCtrl|state.WAIT_NORMAL_STATE ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.291 ; ModeController:ModeCtrl|state.SAVE                        ; ModeController:ModeCtrl|state.DEFAULT                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.443      ;
+; 0.293 ; ModeController:ModeCtrl|state.SAVE                        ; ModeController:ModeCtrl|m                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.445      ;
+; 0.321 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|Q                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.473      ;
+; 0.360 ; TimerLoadable:TimerLoad|counter[7]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; IntensityController:IntensityCtrl|state.WAIT_NORMAL_STATE ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ; ModeController:ModeCtrl|state.WAIT_SAVE                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ; ModeController:ModeCtrl|state.DEFAULT                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363 ; ModeController:ModeCtrl|state.WAIT_SAVE                   ; ModeController:ModeCtrl|m                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.364 ; ModeController:ModeCtrl|state.WAIT_SAVE                   ; ModeController:ModeCtrl|state.SAVE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; IntensityController:IntensityCtrl|state.WAIT_LOW_STATE    ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[0]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[2]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; IntensityController:IntensityCtrl|state.WAIT_NORMAL_STATE ; IntensityController:IntensityCtrl|en                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.370 ; TimerLoadable:TimerLoad|counter[6]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.373 ; IntensityController:IntensityCtrl|state.WAIT_OFF_STATE    ; IntensityController:IntensityCtrl|state.LOW_STATE         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.375 ; TimerLoadable:TimerLoad|counter[3]                        ; TimerLoadable:TimerLoad|counter[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[1]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; ModeController:ModeCtrl|state.DEFAULT                     ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.378 ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ; IntensityController:IntensityCtrl|state.OFF_STATE         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.379 ; IntensityController:IntensityCtrl|state.OFF_STATE         ; IntensityController:IntensityCtrl|state.WAIT_OFF_STATE    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.531      ;
+; 0.380 ; IntensityController:IntensityCtrl|state.LOW_STATE         ; IntensityController:IntensityCtrl|state.WAIT_LOW_STATE    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.532      ;
+; 0.380 ; ModeController:ModeCtrl|state.DEFAULT                     ; ModeController:ModeCtrl|state.SAVE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.532      ;
+; 0.382 ; ModeController:ModeCtrl|state.DEFAULT                     ; ModeController:ModeCtrl|state.WAIT_SAVE                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.534      ;
+; 0.389 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|Q                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.541      ;
+; 0.415 ; TimerLoadable:TimerLoad|Q                                 ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.567      ;
+; 0.415 ; TimerLoadable:TimerLoad|Q                                 ; IntensityController:IntensityCtrl|en                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.567      ;
+; 0.420 ; TimerLoadable:TimerLoad|Q                                 ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.572      ;
+; 0.440 ; TimerLoadable:TimerLoad|counter[5]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.592      ;
+; 0.441 ; TimerLoadable:TimerLoad|counter[4]                        ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.593      ;
+; 0.452 ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ; ModeController:ModeCtrl|m                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.604      ;
+; 0.498 ; TimerLoadable:TimerLoad|counter[7]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.503 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.655      ;
+; 0.503 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[1]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.655      ;
+; 0.510 ; TimerLoadable:TimerLoad|counter[6]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.662      ;
+; 0.515 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[2]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.667      ;
+; 0.515 ; TimerLoadable:TimerLoad|counter[3]                        ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.667      ;
+; 0.535 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.687      ;
+; 0.538 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[2]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.690      ;
+; 0.538 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.690      ;
+; 0.545 ; TimerLoadable:TimerLoad|counter[6]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.697      ;
+; 0.550 ; TimerLoadable:TimerLoad|counter[3]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.702      ;
+; 0.550 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.702      ;
+; 0.552 ; IntensityController:IntensityCtrl|en                      ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.704      ;
+; 0.552 ; IntensityController:IntensityCtrl|en                      ; IntensityController:IntensityCtrl|en                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.704      ;
+; 0.559 ; IntensityController:IntensityCtrl|en                      ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.711      ;
+; 0.573 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.725      ;
+; 0.573 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.725      ;
+; 0.579 ; TimerLoadable:TimerLoad|counter[4]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.585 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.737      ;
+; 0.608 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.760      ;
+; 0.613 ; ModeController:ModeCtrl|m                                 ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.765      ;
+; 0.613 ; ModeController:ModeCtrl|m                                 ; IntensityController:IntensityCtrl|en                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.765      ;
+; 0.620 ; ModeController:ModeCtrl|m                                 ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.772      ;
+; 0.620 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.772      ;
+; 0.634 ; TimerLoadable:TimerLoad|counter[5]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.786      ;
+; 0.643 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.795      ;
+; 0.644 ; TimerLoadable:TimerLoad|counter[3]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.796      ;
+; 0.667 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[0]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.819      ;
+; 0.667 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[2]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.819      ;
+; 0.667 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.819      ;
+; 0.667 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.819      ;
+; 0.667 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.819      ;
+; 0.667 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.819      ;
+; 0.667 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.819      ;
+; 0.667 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.819      ;
+; 0.667 ; IntensityController:IntensityCtrl|en                      ; TimerLoadable:TimerLoad|counter[1]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.819      ;
+; 0.667 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.819      ;
+; 0.669 ; TimerLoadable:TimerLoad|counter[5]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.821      ;
+; 0.673 ; TimerLoadable:TimerLoad|counter[4]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.825      ;
+; 0.679 ; TimerLoadable:TimerLoad|counter[3]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.831      ;
+; 0.702 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.854      ;
+; 0.704 ; TimerLoadable:TimerLoad|counter[5]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.856      ;
+; 0.708 ; TimerLoadable:TimerLoad|counter[4]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.860      ;
+; 0.714 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.866      ;
+; 0.714 ; TimerLoadable:TimerLoad|counter[3]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.866      ;
+; 0.734 ; TimerLoadable:TimerLoad|counter[4]                        ; TimerLoadable:TimerLoad|Q                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.886      ;
+; 0.737 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.889      ;
+; 0.737 ; TimerLoadable:TimerLoad|counter[2]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.889      ;
+; 0.743 ; TimerLoadable:TimerLoad|counter[4]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.895      ;
+; 0.749 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.901      ;
+; 0.772 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.924      ;
+; 0.784 ; TimerLoadable:TimerLoad|counter[5]                        ; TimerLoadable:TimerLoad|Q                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.936      ;
+; 0.784 ; TimerLoadable:TimerLoad|counter[1]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.936      ;
+; 0.806 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[0]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.958      ;
+; 0.806 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[2]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.958      ;
+; 0.806 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.958      ;
+; 0.806 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[4]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.958      ;
+; 0.806 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[5]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.958      ;
+; 0.806 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[6]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.958      ;
+; 0.806 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.958      ;
+; 0.806 ; TimerLoadable:TimerLoad|counter[8]                        ; TimerLoadable:TimerLoad|counter[1]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.958      ;
+; 0.807 ; TimerLoadable:TimerLoad|counter[0]                        ; TimerLoadable:TimerLoad|counter[8]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.959      ;
++-------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|en                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|en                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.LOW_STATE         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.LOW_STATE         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.NORMAL_STATE      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.OFF_STATE         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.OFF_STATE         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_HIGH_STATE   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_LOW_STATE    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_LOW_STATE    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_NORMAL_STATE ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_NORMAL_STATE ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_OFF_STATE    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityController:IntensityCtrl|state.WAIT_OFF_STATE    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ModeController:ModeCtrl|m                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeController:ModeCtrl|m                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ModeController:ModeCtrl|state.DEFAULT                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeController:ModeCtrl|state.DEFAULT                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ModeController:ModeCtrl|state.SAVE                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeController:ModeCtrl|state.SAVE                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeController:ModeCtrl|state.WAIT_DEFAULT                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ModeController:ModeCtrl|state.WAIT_SAVE                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeController:ModeCtrl|state.WAIT_SAVE                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|Q                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|Q                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[4]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[4]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[5]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[5]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[6]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[6]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[8]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoadable:TimerLoad|counter[8]                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|en|clk                                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|en|clk                                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.LOW_STATE|clk                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.LOW_STATE|clk                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.NORMAL_STATE|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.NORMAL_STATE|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.OFF_STATE|clk                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.OFF_STATE|clk                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.WAIT_HIGH_STATE|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.WAIT_HIGH_STATE|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.WAIT_LOW_STATE|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.WAIT_LOW_STATE|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.WAIT_NORMAL_STATE|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.WAIT_NORMAL_STATE|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; IntensityCtrl|state.WAIT_OFF_STATE|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; IntensityCtrl|state.WAIT_OFF_STATE|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; ModeCtrl|m|clk                                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeCtrl|m|clk                                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; ModeCtrl|state.DEFAULT|clk                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeCtrl|state.DEFAULT|clk                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; ModeCtrl|state.SAVE|clk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeCtrl|state.SAVE|clk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; ModeCtrl|state.WAIT_DEFAULT|clk                           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeCtrl|state.WAIT_DEFAULT|clk                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; ModeCtrl|state.WAIT_SAVE|clk                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; ModeCtrl|state.WAIT_SAVE|clk                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|Q|clk                                           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|Q|clk                                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[0]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[0]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[1]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[1]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[2]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[2]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[3]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[3]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[4]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[4]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[5]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[5]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[6]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[6]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[7]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[7]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; TimerLoad|counter[8]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; TimerLoad|counter[8]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]                                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]                                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk                                        ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; bi        ; clk        ; 2.278 ; 2.278 ; Rise       ; clk             ;
+; bm        ; clk        ; 2.275 ; 2.275 ; Rise       ; clk             ;
+; x[*]      ; clk        ; 3.574 ; 3.574 ; Rise       ; clk             ;
+;  x[0]     ; clk        ; 2.607 ; 2.607 ; Rise       ; clk             ;
+;  x[1]     ; clk        ; 3.574 ; 3.574 ; Rise       ; clk             ;
+;  x[2]     ; clk        ; 2.517 ; 2.517 ; Rise       ; clk             ;
+;  x[3]     ; clk        ; 2.748 ; 2.748 ; Rise       ; clk             ;
+;  x[4]     ; clk        ; 2.420 ; 2.420 ; Rise       ; clk             ;
+;  x[5]     ; clk        ; 2.535 ; 2.535 ; Rise       ; clk             ;
+;  x[6]     ; clk        ; 2.657 ; 2.657 ; Rise       ; clk             ;
+;  x[7]     ; clk        ; 2.666 ; 2.666 ; Rise       ; clk             ;
+;  x[8]     ; clk        ; 2.143 ; 2.143 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; bi        ; clk        ; -2.024 ; -2.024 ; Rise       ; clk             ;
+; bm        ; clk        ; -2.150 ; -2.150 ; Rise       ; clk             ;
+; x[*]      ; clk        ; -1.682 ; -1.682 ; Rise       ; clk             ;
+;  x[0]     ; clk        ; -2.291 ; -2.291 ; Rise       ; clk             ;
+;  x[1]     ; clk        ; -3.258 ; -3.258 ; Rise       ; clk             ;
+;  x[2]     ; clk        ; -2.201 ; -2.201 ; Rise       ; clk             ;
+;  x[3]     ; clk        ; -2.432 ; -2.432 ; Rise       ; clk             ;
+;  x[4]     ; clk        ; -2.104 ; -2.104 ; Rise       ; clk             ;
+;  x[5]     ; clk        ; -2.219 ; -2.219 ; Rise       ; clk             ;
+;  x[6]     ; clk        ; -2.341 ; -2.341 ; Rise       ; clk             ;
+;  x[7]     ; clk        ; -2.350 ; -2.350 ; Rise       ; clk             ;
+;  x[8]     ; clk        ; -1.682 ; -1.682 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; mode      ; clk        ; 3.770 ; 3.770 ; Rise       ; clk             ;
+; q         ; clk        ; 4.274 ; 4.274 ; Rise       ; clk             ;
+; v[*]      ; clk        ; 4.121 ; 4.121 ; Rise       ; clk             ;
+;  v[0]     ; clk        ; 4.121 ; 4.121 ; Rise       ; clk             ;
+;  v[1]     ; clk        ; 4.109 ; 4.109 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; mode      ; clk        ; 3.770 ; 3.770 ; Rise       ; clk             ;
+; q         ; clk        ; 4.274 ; 4.274 ; Rise       ; clk             ;
+; v[*]      ; clk        ; 3.986 ; 3.986 ; Rise       ; clk             ;
+;  v[0]     ; clk        ; 3.987 ; 3.987 ; Rise       ; clk             ;
+;  v[1]     ; clk        ; 3.986 ; 3.986 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.671  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  clk             ; -1.671  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -18.842 ; 0.0   ; 0.0      ; 0.0     ; -24.38              ;
+;  clk             ; -18.842 ; 0.000 ; N/A      ; N/A     ; -24.380             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; bi        ; clk        ; 4.234 ; 4.234 ; Rise       ; clk             ;
+; bm        ; clk        ; 4.212 ; 4.212 ; Rise       ; clk             ;
+; x[*]      ; clk        ; 6.838 ; 6.838 ; Rise       ; clk             ;
+;  x[0]     ; clk        ; 5.081 ; 5.081 ; Rise       ; clk             ;
+;  x[1]     ; clk        ; 6.838 ; 6.838 ; Rise       ; clk             ;
+;  x[2]     ; clk        ; 4.818 ; 4.818 ; Rise       ; clk             ;
+;  x[3]     ; clk        ; 5.323 ; 5.323 ; Rise       ; clk             ;
+;  x[4]     ; clk        ; 4.592 ; 4.592 ; Rise       ; clk             ;
+;  x[5]     ; clk        ; 4.862 ; 4.862 ; Rise       ; clk             ;
+;  x[6]     ; clk        ; 5.152 ; 5.152 ; Rise       ; clk             ;
+;  x[7]     ; clk        ; 5.154 ; 5.154 ; Rise       ; clk             ;
+;  x[8]     ; clk        ; 3.956 ; 3.956 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; bi        ; clk        ; -2.024 ; -2.024 ; Rise       ; clk             ;
+; bm        ; clk        ; -2.150 ; -2.150 ; Rise       ; clk             ;
+; x[*]      ; clk        ; -1.682 ; -1.682 ; Rise       ; clk             ;
+;  x[0]     ; clk        ; -2.291 ; -2.291 ; Rise       ; clk             ;
+;  x[1]     ; clk        ; -3.258 ; -3.258 ; Rise       ; clk             ;
+;  x[2]     ; clk        ; -2.201 ; -2.201 ; Rise       ; clk             ;
+;  x[3]     ; clk        ; -2.432 ; -2.432 ; Rise       ; clk             ;
+;  x[4]     ; clk        ; -2.104 ; -2.104 ; Rise       ; clk             ;
+;  x[5]     ; clk        ; -2.219 ; -2.219 ; Rise       ; clk             ;
+;  x[6]     ; clk        ; -2.341 ; -2.341 ; Rise       ; clk             ;
+;  x[7]     ; clk        ; -2.350 ; -2.350 ; Rise       ; clk             ;
+;  x[8]     ; clk        ; -1.682 ; -1.682 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; mode      ; clk        ; 6.643 ; 6.643 ; Rise       ; clk             ;
+; q         ; clk        ; 7.618 ; 7.618 ; Rise       ; clk             ;
+; v[*]      ; clk        ; 7.409 ; 7.409 ; Rise       ; clk             ;
+;  v[0]     ; clk        ; 7.409 ; 7.409 ; Rise       ; clk             ;
+;  v[1]     ; clk        ; 7.383 ; 7.383 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; mode      ; clk        ; 3.770 ; 3.770 ; Rise       ; clk             ;
+; q         ; clk        ; 4.274 ; 4.274 ; Rise       ; clk             ;
+; v[*]      ; clk        ; 3.986 ; 3.986 ; Rise       ; clk             ;
+;  v[0]     ; clk        ; 3.987 ; 3.987 ; Rise       ; clk             ;
+;  v[1]     ; clk        ; 3.986 ; 3.986 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 179      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 179      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 12    ; 12   ;
+; Unconstrained Input Port Paths  ; 111   ; 111  ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 10    ; 10   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Dec 13 14:38:55 2023
+Info: Command: quartus_sta DigitalFan -c DigitalFan
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'DigitalFan.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.671
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.671       -18.842 clk 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -24.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.259
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.259        -2.394 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -24.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4538 megabytes
+    Info: Processing ended: Wed Dec 13 14:38:56 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

@@ -1,0 +1,95 @@
+|DigitalFan
+clk => ModeController:ModeCtrl.clk
+clk => IntensityController:IntensityCtrl.clk
+clk => TimerLoadable:TimerLoad.clk
+bm => ModeController:ModeCtrl.bm
+bi => IntensityController:IntensityCtrl.bi
+rst => IntensityController:IntensityCtrl.rst
+x[0] => TimerLoadable:TimerLoad.X[0]
+x[1] => TimerLoadable:TimerLoad.X[1]
+x[2] => TimerLoadable:TimerLoad.X[2]
+x[3] => TimerLoadable:TimerLoad.X[3]
+x[4] => TimerLoadable:TimerLoad.X[4]
+x[5] => TimerLoadable:TimerLoad.X[5]
+x[6] => TimerLoadable:TimerLoad.X[6]
+x[7] => TimerLoadable:TimerLoad.X[7]
+x[8] => TimerLoadable:TimerLoad.X[8]
+q <= TimerLoadable:TimerLoad.Q
+mode <= ModeController:ModeCtrl.m
+v[0] <= IntensityController:IntensityCtrl.v[0]
+v[1] <= IntensityController:IntensityCtrl.v[1]
+
+
+|DigitalFan|ModeController:ModeCtrl
+clk => m~reg0.CLK
+clk => state~5.DATAIN
+bm => state.DATAB
+bm => state.DATAA
+bm => Selector2.IN3
+bm => Selector2.IN2
+bm => Selector0.IN1
+bm => Selector1.IN1
+m <= m~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DigitalFan|IntensityController:IntensityCtrl
+clk => en~reg0.CLK
+clk => d~reg0.CLK
+clk => state~2.DATAIN
+m => process_0.IN0
+bi => state.DATAA
+bi => state.DATAB
+bi => state.DATAB
+bi => state.DATAB
+bi => Selector3.IN3
+bi => Selector4.IN4
+bi => Selector4.IN1
+bi => Selector5.IN1
+bi => en.DATAA
+bi => Selector0.IN1
+bi => Selector1.IN1
+bi => Selector2.IN1
+bi => Selector2.IN2
+rst => en~reg0.ACLR
+rst => d~reg0.ACLR
+rst => state~4.DATAIN
+Q => process_0.IN1
+d <= d~reg0.DB_MAX_OUTPUT_PORT_TYPE
+en <= en~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v[0] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+v[1] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DigitalFan|TimerLoadable:TimerLoad
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clk => counter[8].CLK
+clk => Q~reg0.CLK
+en => Q.OUTPUTSELECT
+en => counter[2].ENA
+en => counter[1].ENA
+en => counter[0].ENA
+en => counter[3].ENA
+en => counter[4].ENA
+en => counter[5].ENA
+en => counter[6].ENA
+en => counter[7].ENA
+en => counter[8].ENA
+X[0] => Equal0.IN8
+X[1] => Equal0.IN7
+X[2] => Equal0.IN6
+X[3] => Equal0.IN5
+X[4] => Equal0.IN4
+X[5] => Equal0.IN3
+X[6] => Equal0.IN2
+X[7] => Equal0.IN1
+X[8] => Equal0.IN0
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -11,6 +11,7 @@ port (
 	
 	d		: out std_logic;
 	en		: out std_logic;
+	s		: out bit_vector (2 downto 0);
 	v		: out bit_vector (1 downto 0)
 );
 end IntensityController;
@@ -128,4 +129,13 @@ with state select
 			"10" when WAIT_NORMAL_STATE,
 			"11" when HIGH_STATE,
 			"11" when WAIT_HIGH_STATE;
+with state select
+	s <= 	"000" when OFF_STATE,
+			"001" when WAIT_OFF_STATE,
+			"010" when LOW_STATE,
+			"011" when WAIT_LOW_STATE,
+			"100" when NORMAL_STATE,
+			"101" when WAIT_NORMAL_STATE,
+			"110" when HIGH_STATE,
+			"111" when WAIT_HIGH_STATE;
 end architecture;

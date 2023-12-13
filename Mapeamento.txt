@@ -1,0 +1,14 @@
+Entradas
+
+rst  KEY[3] 	PIN_W26 
+bi   KEY[2]	PIN_P23 
+bm   KEY[1]	PIN_N23 
+x[1] SW[17]	PIN_V2 
+clk  CLOCK_50 	PIN_N2
+
+Saídas
+
+mode LEDG[7]	PIN_Y18
+v[0] LEDR0	PIN_AE23 
+v[1] LEDR1	PIN_AF23 
+q    LEDR17     PIN_AD12

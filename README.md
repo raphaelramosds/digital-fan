@@ -24,5 +24,5 @@ As seguintes entidades foram implementadas
 
 As simulações descritas no relatório estão no formato de University Progam Waveform VWF. Elas podem ser encontradas na raiz deste repositóri
 
--WaveformIntensity.vwf são as formas de ondas relativas a alternância das velocidades
+- WaveformIntensity.vwf são as formas de ondas relativas a alternância das velocidades
 - WaveformModes.vwf são as formas de ondas relativas ao modo de economia de energia
